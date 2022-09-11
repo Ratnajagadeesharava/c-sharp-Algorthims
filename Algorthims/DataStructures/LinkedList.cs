@@ -18,7 +18,7 @@ namespace Algorthims.DataStructures
                 ListNode<T> node = temp.Next;
 				temp.Next = dummy;
 				dummy = temp;
-				this.Head = temp;
+				Head = temp;
 				temp = node;
 				
 			}
