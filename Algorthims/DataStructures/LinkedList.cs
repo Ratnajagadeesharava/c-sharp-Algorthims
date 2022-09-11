@@ -1,29 +1,38 @@
 ﻿using System;
+using System.Text;
 using Algorthims.DataStructures;
 namespace Algorthims.DataStructures
 {
 	public class LinkedList<T>
 	{
-		public ListNode<T>? Head { get; set; }
+		public ListNode<T> Head { get; set; }
 
-		public static ListNode<T> ReverseLinkedList(ListNode<T> head)
+		public  void ReverseLinkedList()
 		{
-			if (head != null)
-				return head;
-			ListNode<T> dummy = null; 
-			ListNode<T> temp = head;
-			
-			while (temp != null)
+			if (this.Head == null)
+				return ;
+			ListNode<T>? dummy = null; 
+			ListNode<T> temp = this.Head;
+			while(temp != null)
 			{
-				
-				ListNode<T> temp1 = temp.Next;
+                ListNode<T> node = temp.Next;
 				temp.Next = dummy;
 				dummy = temp;
-				temp = temp1;
+				this.Head = temp;
+				temp = node;
 				
 			}
-
-			return head;
+		}
+		public override string ToString()
+		{
+			StringBuilder sb = new StringBuilder();
+			ListNode<T> head = this.Head;
+			while (head != null)
+			{
+				sb.Append(head.ToString() + " ");
+				head = head.Next;
+			}
+			return sb.ToString();
 		}
 	}
 }

@@ -9,6 +9,10 @@ namespace Algorthims.DataStructures
 		{
 			this.Value = Value;
 		}
+		public override string ToString()
+		{
+			return Value.ToString();
+		}
 	}
 }
 
